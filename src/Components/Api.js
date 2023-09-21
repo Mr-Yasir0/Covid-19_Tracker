@@ -1,9 +1,9 @@
 import axios from "axios";
 
-// let apiUrl = "https://coronavirus-smartable.p.rapidapi.com/stats/v1/US/";
+// let apiUrl = "https://coronavirus-smartable.p.rapidapsi.com/stats/v1/";
 const options = {
   method: "GET",
-  url: "https://coronavirus-smartable.p.rapidapi.com/stats/v1/PK/",
+  url: "https://coronavirus-smartable.p.rapidapi.com/stats/v1/global/",
   headers: {
     "X-RapidAPI-Key": "fabadc432amsh0dc6d07dce63ff3p13d253jsn133d5d847166",
     "X-RapidAPI-Host": "coronavirus-smartable.p.rapidapi.com",
@@ -11,7 +11,7 @@ const options = {
 };
 
 export const globleData = async (country) => {
-  // let changeableUrl = `${apiUrl}`; // Default URL for global data
+  // let changeableUrl = `${apiUrl}/US/`; // Default URL for global data
   // if (country) {
   //   changeableUrl = `${apiUrl}/${country}`;
   // }
@@ -48,15 +48,15 @@ export const history = async () => {
   }
 };
 
-export const countries = async () => {
-  try {
-    const {
-      data: {
-        stats: { breakdowns },
-      },
-    } = await axios.request(options);
-    return breakdowns.map((i) => i.location.countryOrRegion);
-  } catch (error) {
-    console.log(error);
-  }
-};
+// export const countries = async () => {
+//   try {
+//     const {
+//       data: {
+//         stats: { breakdowns },
+//       },
+//     } = await axios.request(options);
+//     return breakdowns.map((i) => i.location.countryOrRegion);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
