@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Line, Bar } from "react-chartjs-2";
 import { history } from "../Api";
 import { Chart as ChartJS } from "chart.js/auto";
+import "../Chart/Chart.css";
 
 const Charts = () => {
   const [data, setData] = useState([]);
@@ -48,7 +49,7 @@ const Charts = () => {
     />
   );
 
-  return <div>{lineChart}</div>;
+  return <div className="main">{lineChart}</div>;
 };
 
 export default Charts;
